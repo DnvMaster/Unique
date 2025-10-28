@@ -20,7 +20,7 @@ Route::group(['middleware'=>'web'],function()
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function()
 {
-    Route::get('/', function() 
+    Route::get('/', function()
     {
         //
     });
@@ -36,7 +36,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function()
     {
         Route::get('/',['uses'=>'PortfolioController@execute','as'=>'portfolio']);
         Route::match (['get','post'], '/add', ['uses'=>'PortfolioAddController@execute', 'as' => 'portfolioAdd']);
-         Route::match(['get', 'post', 'delete'],'/edit/{portfolio}',['uses'=>'PortfolioEditController@execute', 'as'=>'portfolioEdit']);
+        Route::match(['get', 'post', 'delete'],'/edit/{portfolio}',['uses'=>'PortfolioEditController@execute', 'as'=>'portfolioEdit']);
     });
 
     Route::group(['prefix'=>'services'], function()
